@@ -1,90 +1,63 @@
-import React, {useState,} from 'react';
- import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-//  import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-
-const Forgetpassword = () =>{
-
-  const [email , setEmail] = useState("")
-  const [password , setPassword] = useState("")
-// const history = useHistory();
+import React, { useState, } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
-  const   handleSubmitClick = (e) => {
-    e.preventDefault();
-    let item = { email, password}
-    console.log(item);
-//    let url = "http://localhost:3002/comments"
+const Forgetpassword = () => {
+    const [state , setState] = useState({
+        email : "",
+        password : "",
+       
+    })
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
+    const handleSubmitClick = (e) => {
+        e.preventDefault();
+        
+    }
     
-//   let  params  = {
-//         method: 'post',
-//         headers: {
-//                 'content-type': 'application/json'
+
+    return(
+        <div className="main-div">
+          <div className="center-div">
+              <form>
+                  <div className="form-group text-left">
+                  <label htmlFor="exampleInputEmail1">Email address</label>
+                  <input type="email"  
+                         className="form-control" 
+                         id="email" 
+                         placeholder="Enter email"
+                         value={state.email}
+                         onChange={handleChange}
+                  />
+                  
+                  </div>
+                  <div className="form-group text-left">
+                      <label htmlFor="exampleInputPassword1">Password</label>
+                      <input type="password" 
+                          className="form-control" 
+                          id="password" 
+                          placeholder="Password"
+                          value={state.password}
+                          onChange={handleChange} 
+                      />
+                  </div>
                  
-//         },
-//         body: JSON.stringify(item)
-//     }
-//     fetch(url, params).then((responce) =>{
-//  responce.json();
-// }).then((item)=>{
-//    console.log(item);
-// }).catch((error)=>{
-//     console.log(error);
-// })
-   axios
-   .post("http://localhost:3002/profile", {
-         email,
-         password,
-   }).then((responce) => {
-       console.log(responce);
-   }).catch((error) => {
-       console.log(error);
-   });
-
-           
-};
-
-return(
-<div className="main-div">
-<div className="center-div">
-    <form onSubmit={handleSubmitClick}>
-        <div className="form-group text-left">
-        <label htmlFor="exampleInputEmail1">Email address</label>
-        <input type="email"  
-               className="form-control" 
-               name="email" 
-             
-               placeholder="Enter email"
-               value={email}
-               onChange={(e)=>setEmail(e.target.value)}
-        />
-        
-        </div>
-        <div className="form-group text-left">
-        <label htmlFor="exampleInputEmail1">Email address</label>
-        <input type="password"  
-               className="form-control" 
-               name="password" 
-               
-               placeholder="Enter password"
-               value={password}
-               onChange={(e)=>setPassword(e.target.value)}
-        />
-        
-        </div>
-       
-       
-        <button 
-            type="submit" 
-            className="btn btn-primary"
-            // onClick={handleSubmitClick}
-        >
-            Submit
-        </button>
-     
-    </form>
-</div>
-</div>
-)
+                  <button 
+                      type="submit" 
+                      className="btn btn-primary"
+                      onClick={handleSubmitClick}
+                  >
+                      Register
+                  </button>
+                 
+              </form>
+          </div>
+          </div>
+      )
 };
 export default Forgetpassword;

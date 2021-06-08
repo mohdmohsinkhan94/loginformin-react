@@ -6,6 +6,7 @@ import './App.css';
  import {Switch, Route} from 'react-router-dom';
  import Forgetpassword from './Forgetpassword';
   import Singup from './Singup';
+  import Home from './Home';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
        <Route  exact path="/" component={Forgetpassword}/>
        <Route  exact path="/Registration" component={ Registration}/>
        <Route  exact path="/singup" component={Singup}/>
+       <Route  exact path="/home" component={Home}/>
      </Switch> 
 
     </div>
