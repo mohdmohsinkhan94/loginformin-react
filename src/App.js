@@ -1,27 +1,32 @@
 import React from 'react';
- import Login from './Login'
 import './App.css';
-// import Header from './Componenet/Header';
-  import Registration from './Componenet/Registration';
- import {Switch, Route} from 'react-router-dom';
- import Forgetpassword from './Forgetpassword';
-  import Singup from './Singup';
-  import Home from './Home';
-
+// import User from './components/User/User';
+// import Student from './components/Student';
+import './App.css';
+import HomePageWraper from './components/HomePageWraper/HomePageWraper';
+import ExpenseForm from './components/ExpenseForm/ExpenseForm';
+import { useState } from 'react';
+import ExpenseList from './components/ExpenseList/ExpenseList';
 
 const App = () => {
+  let [expenseList, setExpenseList] = useState([])
+
+  function onNewExpenseAdded(newExpense) {
+    setExpenseList([newExpense, ...expenseList]);
+
+  }
+ 
   return (
     <div className="App">
-       <Login /> 
-     {/* <Header /> */}
-     
-     <Switch>
-    
-       <Route  exact path="/" component={Forgetpassword}/>
-       <Route  exact path="/Registration" component={ Registration}/>
-       <Route  exact path="/singup" component={Singup}/>
-       <Route  exact path="/home" component={Home}/>
-     </Switch> 
+   <>
+   {/* <User name={'mohsin khan'}/>
+   <Student name={'mohd mohsin'} email="mohsin.mrt@gmail.com"/>
+   <button onClick={()=>{}}></button> */}
+    <HomePageWraper className="main-wrapper">
+    <ExpenseForm notifyToParent={onNewExpenseAdded}/>
+    <ExpenseList expenseList={expenseList}/>
+    </HomePageWraper>
+    </>
 
     </div>
   );
