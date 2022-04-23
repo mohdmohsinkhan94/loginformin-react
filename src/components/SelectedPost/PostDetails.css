@@ -1,0 +1,12 @@
+.postDetails{
+    width: 30%;
+    margin-top: 5px;
+    display: flexbox;
+    padding: 10px;
+    border: 2px;
+    border: 2px solid red;
+
+}
+.heading{
+    color: brown;
+}

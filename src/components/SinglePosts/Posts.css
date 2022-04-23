@@ -1,0 +1,51 @@
+.posts-wraper {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 2px;
+    display: flex;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 500;
+}
+.posts-wraper{
+    border: 1 px solid red ;
+    padding: 10px;
+    border-radius:2px;
+    display:block
+}
+.post{
+    width: 40%;
+    margin-top: 5px;
+    display: flexbox;
+    padding: 10px;
+    border: 2px;
+    border: 2px solid red;
+}
+.button{
+     display: flex;
+     justify-content: flex-end;
+
+  
+}
+.buttonPost{
+    color: azure;
+    background-color: rgb(27, 216, 106);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.deletepost{
+    color: azure;
+    background-color: rgb(27, 216, 106);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.postDetails{
+    width: 50%;
+    margin-top: 5px;
+    display: flexbox;
+    justify-content: left;
+    padding: 10px;
+    border: 2px;
+    border: 2px solid red;
+
+}
+.Heading{
+    color: brown;
+}
